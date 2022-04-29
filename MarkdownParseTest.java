@@ -28,13 +28,13 @@ public class MarkdownParseTest {
     public void testMarkdownParseFile3() throws IOException {
         Path fileName = Path.of("test-file3.md");
         String content = Files.readString(fileName);
-        assertEquals("[https://lh3.googleusercontent.com/2hDpuTi-0AMKvoZJGd-yKWvK4tKdQr_kLIpB_qSeMau2TNGCNidAosMEvrEXFO9G6tmlFlPQplpwiqirgrIPWnCKMvElaYgI-HiVvXc=w600]", MarkdownParse.getLinks(content).toString());
+        assertEquals("[]", MarkdownParse.getLinks(content).toString());
     }    
 
     @Test
     public void testMarkdownParseFile4() throws IOException {
         Path fileName = Path.of("test-file4.md");
         String content = Files.readString(fileName);
-        assertEquals("[1]", MarkdownParse.getLinks(content).toString());
+        assertEquals("[]", MarkdownParse.getLinks(content).toString());
     } 
 }
