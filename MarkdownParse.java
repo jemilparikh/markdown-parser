@@ -50,7 +50,7 @@ public class MarkdownParse {
         Path fileName = Path.of(args[0]);
         String content = Files.readString(fileName);
         ArrayList<String> links = getLinks(content);
-	    System.out.println(links);
+	    System.out.println(links + "235");
         System.out.println("Runing via command line test");
     }
 }
