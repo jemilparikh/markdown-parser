@@ -28,7 +28,7 @@ public class MarkdownParse {
             if (openBracket == -1 || closeBracket == -1 || openParen == -1 || closeParen == -1) {
                 break;
             } else if (openBracket != 0) {
-                else if (markdown.substring(openBracket - 1, openBracket).equals("!")) {
+                if (markdown.substring(openBracket - 1, openBracket).equals("!")) {
                     break;
                 } else if (openParen - closeBracket != 1) {
                     break;
