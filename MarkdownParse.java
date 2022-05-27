@@ -27,16 +27,18 @@ public class MarkdownParse {
 
             if (openBracket == -1 || closeBracket == -1 || openParen == -1 || closeParen == -1) {
                 break;
-            } else if (markdown.substring(openBracket - 1, openBracket).equals("!")) {
-                break;
-            } else if (openParen - closeBracket != 1) {
-                break;
+            } else if (openBracket != 0) {
+                if (markdown.substring(openBracket - 1, openBracket).equals("!")) {
+                    break;
+                } else if (openParen - closeBracket != 1) {
+                    break;
+                } else if (markdown.substring(openBracket - 1, openBracket).equals("`") 
+                && markdown.substring(closeParen + 1, closeParen + 2).equals("`")) {
+                    break;
+                }
             } else if (hasSpace == 1) {
                 break;
-            } else if (markdown.substring(openBracket - 1, openBracket).equals("`") 
-            && markdown.substring(closeParen + 1, closeParen + 2).equals("`")) {
-                break;
-            }
+            } 
 
             toReturn.add(markdown.substring(openParen + 1, closeParen));
             currentIndex = closeParen + 1;
